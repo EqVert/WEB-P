@@ -1,14 +1,14 @@
-//Інтерфейс для завантаження файлів
+//Интерфейс для загрузки файлов
 Interface Downloader
     Function download(file: String) -> Data
     
-//Реалізація простого завантажувача
+//Реализация загрузчика
 Class SimpleDownloader Implements Downloader
     Function download(file: String) -> Data
-        // Логіка завантаження файлу
+        // Логика загрузки файла
         Return someData
     
-//Реалізація кешованого завантажувача
+//Реализация кешированного загрузчика
 Class CachedDownloader Implements Downloader
     Private simpleDownloader: SimpleDownloader
     Private cache: Cache
@@ -22,10 +22,10 @@ Class CachedDownloader Implements Downloader
         Return data
 
 
-// Клієнтський код
+// Пример кода
 simpleDownloader = New SimpleDownloader()
 cachedDownloader = New CachedDownloader(simpleDownloader)
 
 data1 = simpleDownloader.download("file1")
-data2 = cachedDownloader.download("file1")  // Завантажує і кешує
-data3 = cachedDownloader.download("file1")  // Використовує кешовані дані
+data2 = cachedDownloader.download("file1")  // Загружает и кеширует
+data3 = cachedDownloader.download("file1")  // Использует кешированные данные
