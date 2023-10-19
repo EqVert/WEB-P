@@ -45,5 +45,3 @@ class ExampleApplication
         
         // 3. Розрахувати вартість доставки.
         deliveryCost = context.calculateDeliveryCost(distance, weight)
-
-        // N. Вивести результат на екран.
